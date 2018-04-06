@@ -36,7 +36,10 @@ int main(int argc, char **argv)
 
   ros::NodeHandle n;
 
-  ros::ServiceClient client = n.serviceClient<dynamixel_controllers::SetCompliancePunch>("/dynamixel_controllers/set_compliance_punch");
+  system("rosservice call /tilt_controller/set_compliance_punch 'punch: 20.0'");
+  system("rosservice call /tilt_controller/set_compliance_margin 'margin: 0.0'");
+  system("rosservice call /tilt_controller/set_compliance_slope 'slope: 128.0'");
+  system("rosservice call /tilt_controller/torque_enable 'torque_enable: 1.0'");
 
   chatter_pub = n.advertise<std_msgs::Float64>("tilt_controller/command", 1000);
   ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);

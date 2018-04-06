@@ -67,5 +67,5 @@ rosrun scanner_dynamixel_control talker 10
 ### 3.3 Execute the turns
 The motor will respond to any kind of message sent to the /chatter. First time it will reset to zero position. From there it will move in the above given steps. Execute in a new terminal.
 ```
-topic pub -1 /chatter std_msgs/String "move"
+rostopic pub -1 /chatter std_msgs/String "move"
 ```

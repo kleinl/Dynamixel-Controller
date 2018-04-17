@@ -69,3 +69,20 @@ The motor will respond to any kind of message sent to the /chatter. First time i
 ```
 rostopic pub -1 /chatter std_msgs/String "move"
 ```
+
+## 4. Settings
+In case the table does not operate as expected due to changes of the system over
+time there are several things that could fix the issue.
+### 4.1 Hardware
+Due to PID controlled movements its possible that the screws will get loosen
+over time. To fix first unscrew the upper wooden plate then tighten the four
+screws below. Do not fasten them to much, since this will increase resistance of
+the ball bearing.
+### 4.2 Software
+In the file scanner_dynamixel_control/tilt.yaml there are four parameters you
+might change depending on your requirements.
+*joint_speed: sets the speed.
+*joint_compliance_slope: P value of the PID controller.
+*joint_compliance_punch: can be seen as a baseline that is added to the P value.
+*joint_compliance_margin: defines how big the error between target and actual
+value can be before the motor will start to act.

@@ -65,7 +65,7 @@ parameter ist the degrees per message parameter (here 10 degrees per step)
 rosrun scanner_dynamixel_control dxl_control 10
 ```
 ### 3.3 Execute the turns
-The motor will respond to any kind of message sent to the /chatter. First time it will reset to zero position. From there it will move in the above given steps. Execute in a new terminal.
+The motor will respond to service calls. First time it will reset to zero position. From there it will move in the above given steps. Execute in a new terminal.
 ```
 rosservice call /dxl_control/move
 

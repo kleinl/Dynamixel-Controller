@@ -81,8 +81,8 @@ the ball bearing.
 ### 4.2 Software
 In the file scanner_dynamixel_control/tilt.yaml there are four parameters you
 might change depending on your requirements.
-*joint_speed: sets the speed.
-*joint_compliance_slope: P value of the PID controller.
-*joint_compliance_punch: can be seen as a baseline that is added to the P value.
-*joint_compliance_margin: defines how big the error between target and actual
+* joint_speed: sets the speed.
+* joint_compliance_slope: P value of the PID controller.
+* joint_compliance_punch: can be seen as a baseline that is added to the P value.
+* joint_compliance_margin: defines how big the error between target and actual
 value can be before the motor will start to act.

@@ -62,12 +62,13 @@ roslaunch scanner_dynamixel_control start_tilt_controller.launch
 ### 3.4 Start the listener 
 parameter ist the degrees per message parameter (here 10 degrees per step)
 ```
-rosrun scanner_dynamixel_control talker 10
+rosrun scanner_dynamixel_control dxl_control 10
 ```
 ### 3.3 Execute the turns
 The motor will respond to any kind of message sent to the /chatter. First time it will reset to zero position. From there it will move in the above given steps. Execute in a new terminal.
 ```
-rostopic pub -1 /chatter std_msgs/String "move"
+rosservice call /dxl_control/move
+
 ```
 
 ## 4. Settings
